@@ -13,21 +13,29 @@ You can also use Today's lecture as reference if you forgot certain lines - http
 
 ## Part 1: Finalize "Cart" Feature
 In store.html: 
-1. Display products directly from the database. 
-(Hint: Pass a variable in the app route into the store template)
+1. Display products directly from the database. Note there are already products in the database.
+(Hint: Use a function from database.py in order to get all the products and then pass them into render_template. You do NOT need a variable route here because you don't need any information from the user.)
 
-2. Make it so when you click on "Add To Cart" button
-it adds the selected product to the Cart table. 
-(Hint: Use "add_to_cart()" function from the previous lab)
+2. Make it so when you click on "Add To Cart" button it adds the selected product to the Cart table. 
+(Hint: Now we will need a variable route since we need to know which product we should add to the cart. Use a variable route like "/add-to-cart/<int:product_id>" and the product_id will tell us which product we are adding. You will also find the "add_to_cart()" function from database.py very useful here!)
 </br>
-In cart.html:</br>
-3. Display products that were added to cart directly from the database.
-</br>
-4. Add a simple "Pay Now" button.
 
 ## Part 2: Creating Our Admin Portal
-1. Create a new app route and a new html file that has a "log in" form. Make it so only your desired username and password can log in.
+1. Create a new app route `@app.route("\login",methods=['GET','POST'])`. For right now, if the `request.method` is GET, have this route return the `render_template` of `"login.html"`, else return the string `"POST request"`.
 
+(Hint: look at slide 15)
+
+2. In `"login.html"` add a form that will allow the user to enter in a username, a password, and submit.  Make sure that your form tag `<form action="ROUTE" method="POST">` has an `action=` attribute that will POST this form to the route you made in the last step. Make sure all your input tags have name attributes. 
+
+(Hint: look at slide 18)
+
+3. Back in `app.py`, we will want to edit the `login` route so that on a POST request it will check if the user has put in the correct username and password, and if they are correct it will return the string `"logged in!"` and if they are wrong, it will return the `render_template` of `"login.html"`. 
+
+(Hint: look at slide 24 to see how to get info out of a form, we will use something like `request.form[NAME ATTRIBUTE]`)  
+
+(Hint 2: Note, you will NOT need a user class like other login examples since we will only have one admin account. Therefore, we can just check the login using something like `username == 'admin' and password=='admin'`)
+
+# BONUSES:
 2. Create an another app route and another html file and call it "portal.html", this will be the portal the admin can log into and control the website's database.
 
 3. In portal.html:
@@ -36,7 +44,7 @@ In cart.html:</br>
 - In the table, have a "delete product" feature.
 - After creating a table, create a new form for "adding products" feature.
 
-## Part 3: Finalize your website design
+## BONUS: Finalize your website design
 
 Finalize your website's design, make sure it looks clean and organized, and add any missing colors/fonts...etc.
 
