@@ -36,9 +36,9 @@ In store.html:
 (Hint 2: Note, you will NOT need a user class like other login examples since we will only have one admin account. Therefore, we can just check the login using something like `username == 'admin' and password=='admin'`)
 
 # BONUSES:
-2. Create an another app route and another html file and call it "portal.html", this will be the portal the admin can log into and control the website's database.
+4. Create an another app route and another html file and call it "portal.html", this will be the portal the admin can log into and control the website's database.
 
-3. In portal.html:
+5. In portal.html:
 - Create a table that shows all the products.
 - In the table, have an "edit product" feature.
 - In the table, have a "delete product" feature.
