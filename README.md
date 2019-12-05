@@ -17,6 +17,12 @@ In store.html:
 
 (Hint: Use a function from database.py in order to get all the products and then pass them into render_template. You do NOT need a variable route here because you don't need any information from the user.)
 
+a. Inside of `app.py`, in the function that is run when the user goes to the store page, first use the function query_all() to get all the products from the database.
+
+b. Then pass those those products into the `render_template` function. Use something like `render_template('file.html', products = product_list)`
+
+c. Finally inside of the `store_html` file create a for loop to go through all the products and display them on the page. Look at slide 2 for tips.
+
 2. Make it so when you click on "Add To Cart" button it adds the selected product to the Cart table. 
 
 (Hint: Now we will need a variable route since we need to know which product we should add to the cart. Use a variable route like "/add-to-cart/<int:product_id>" and the product_id will tell us which product we are adding. You will also find the "add_to_cart()" function from database.py very useful here!)
