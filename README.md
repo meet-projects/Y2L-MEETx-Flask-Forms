@@ -14,9 +14,11 @@ You can also use Today's lecture as reference if you forgot certain lines - http
 ## Part 1: Finalize "Cart" Feature
 In store.html: 
 1. Display products directly from the database. Note there are already products in the database.
+
 (Hint: Use a function from database.py in order to get all the products and then pass them into render_template. You do NOT need a variable route here because you don't need any information from the user.)
 
 2. Make it so when you click on "Add To Cart" button it adds the selected product to the Cart table. 
+
 (Hint: Now we will need a variable route since we need to know which product we should add to the cart. Use a variable route like "/add-to-cart/<int:product_id>" and the product_id will tell us which product we are adding. You will also find the "add_to_cart()" function from database.py very useful here!)
 </br>
 
